@@ -1,0 +1,56 @@
+
+<div class="container">
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">TITRE</th>
+                <th scope="col">DESCRIPTION</th>
+                <th scope="col">PRIX</th>
+                <th scope="col">CATEGORIE</th>
+                <th scope="col">MODIFIER</th>
+                <th scope="col">SUPPRIMER</th>
+                <th scope="col">ETOILE</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor=" let article of articles " >
+                <th scope="row">{{ article.id }}</th>
+                <td>{{ article.title }}</td>
+                <td>{{ article.description }}</td>
+                <td>{{ article.prix }}</td>
+                <td>{{ article.categori.nom }}</td>
+                <td> <a (click)="onEditer(article)" class="align-middle"><i class="fa fa-edit" aria-hidden="true"></i></a> </td>
+                <td> <a (click)="onSupprimer(article)" style="color:red;"><i class="fa fa-trash" aria-hidden="true"></i></a> </td>
+                <td> <p class="ratingBox" itemprop="aggregateRating" itemscope itemtype="http://schema.xyz/AggregateRating">
+                    <span title="3.42 / 5">
+                        <svg height="16" width="16">
+                          <polygon points="8,0 10.5,5 16,6 12,10 13,16 8,13 3,16 4,10 0,6 5.5,5" fill="Yellow" stroke="DarkKhaki" stroke-width=".5" />
+                        </svg>
+                        <svg height="16" width="16">
+                            <polygon points="8,0 10.5,5 16,6 12,10 13,16 8,13 3,16 4,10 0,6 5.5,5" fill="Yellow" stroke="DarkKhaki" stroke-width=".5" />
+                        </svg>
+                        <svg height="16" width="16">
+                            <polygon points="8,0 10.5,5 16,6 12,10 13,16 8,13 3,16 4,10 0,6 5.5,5" fill="Yellow" stroke="DarkKhaki" stroke-width=".5" />
+                        </svg>
+                        <svg height="16" width="16">
+                            <defs>
+                               <linearGradient id="starGradient">
+                                 <stop offset="42%" stop-color="Yellow"/>
+                                 <stop offset="42%" stop-color="LightGrey"/>
+                               </linearGradient>
+                            </defs>
+                            <polygon points="8,0 10.5,5 16,6 12,10 13,16 8,13 3,16 4,10 0,6 5.5,5" fill="url(#starGradient)" stroke="DarkKhaki" stroke-width=".5" />
+                        </svg>
+                        <svg height="16" width="16">
+                            <polygon points="8,0 10.5,5 16,6 12,10 13,16 8,13 3,16 4,10 0,6 5.5,5"  fill="LightGrey" stroke="DimGray" stroke-width=".5" />
+                        </svg>
+                    </span>
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
